@@ -30,3 +30,7 @@ RGB_MATRIX_SUPPORTED = yes
 
 RGBLIGHT_ENABLE = no      # Enable keyboard RGB underglow
 RGBLIGHT_DRIVER = WS2812
+
+# Disable suspend to keep master communicating with slave
+NO_SUSPEND_POWER_DOWN = yes
+NO_USB_STARTUP_CHECK = yes

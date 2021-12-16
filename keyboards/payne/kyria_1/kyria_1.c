@@ -14,6 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "kyria_1.h"
+#include "lufa.h"
 
 #ifdef SWAP_HANDS_ENABLE
 // clang-format off
@@ -106,4 +107,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
     previous_layer_state = state;
     return state;
+}
+
+void housekeeping_task_user(void) {
+    rgb_matrix_set_suspend_state(USB_DeviceState == DEVICE_STATE_Suspended);
 }
