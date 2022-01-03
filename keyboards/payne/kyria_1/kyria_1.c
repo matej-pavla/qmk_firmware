@@ -109,6 +109,16 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
+
 void housekeeping_task_user(void) {
     rgb_matrix_set_suspend_state(USB_DeviceState == DEVICE_STATE_Suspended);
+}
+
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color(5, RGB_RED);
+        rgb_matrix_set_color(9, RGB_RED);
+        rgb_matrix_set_color(6, RGB_RED);
+        rgb_matrix_set_color(8, RGB_RED);
+    }
 }
