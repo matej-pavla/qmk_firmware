@@ -65,10 +65,7 @@ led_config_t g_led_config = { {
 // https://beta.docs.qmk.fm/using-qmk/hardware-features/lighting/feature_rgb_matrix#colors-id-colors
 void set_default_rgb(void) {
     rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
-    rgb_matrix_sethsv(HSV_CYAN);
-    
-    //rgb_matrix_set_speed(64);
-    //rgb_matrix_mode(RGB_MATRIX_RAINBOW_PINWHEELS);
+    rgb_matrix_sethsv(HSV_GREEN);
 }
 
 layer_state_t previous_layer_state = 0;
@@ -97,8 +94,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         break;
     case 3:
         if (get_previous_layer() != 4) {
-            rgb_matrix_set_speed(64);
-            rgb_matrix_mode(RGB_MATRIX_RAINBOW_MOVING_CHEVRON);
+            rgb_matrix_mode(RGB_MATRIX_SOLID_COLOR);
+            rgb_matrix_sethsv(HSV_CYAN);
         }
         break;
     default: //  for any other layers, or the default layer
